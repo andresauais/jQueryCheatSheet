@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>jQuery Cheat Sheet</h1>
+
+<h2>Events</h2>
+<h3>When document loaded</h3>
+    <p id="vloaded"></p>
+    <p id="qloaded"></p>
+<h3>HTML item has been clicked</h3>
+    <button id="vclick">Vanilla Click</button>
+    <button id="qclick">jQuery Click</button>
+<h3>HTML item has been double clicked</h3>
+    <button id="vclick2">Vanilla Click</button>
+    <button id="qclick2">jQuery Click</button>
+<h3>Press a key</h3>
+    <p id="vpressed"></p>
+    <p id="qpressed"></p>
+<h3 id="mouseover">Move the mouse cursor</h3>
+    <p id="vover"></p>
+    <p id="qover"></p>
+<h3>Changes a value</h3>
+    <p id="vvalue">vanilla</p>
+    <p id="qvalue">jQuery</p>
+<h3>Image is loaded</h3>
+    <img src="compman.gif" id="imgload">
+    <p id="vload"></p>
+    <p id="qload"></p>
+<h3>Image fails to load</h3>
+    <img src="compman.gi" id="imgnotload">
+    <p id="vnotload"></p>
+    <p id="qnotload"></p>
+<h3>Form is submitted</h3>
+    <form id="form">
+        <input type="text">
+        <input type="submit">
+    </form>
+    <p id="vsubmit"></p>
+    <p id="qsubmit"></p>
+<h3>Changes the option of a select element</h3>
+    <select id="mySelectv"></select>
+    <select id="mySelectq"></select>
+<h3 id="mouseover2">Position the mouse over an element</h3>
+    <p id="vover2"></p>
+    <p id="qover2"></p>
+<h3>Checked or unchecked</h3>
+    <button id="vcheck">Vanilla Check</button>
+        <input id="vcheckbox" type="checkbox">
+    <button id="qcheck">jQuery Check</button>
+        <input id="qcheckbox" type="checkbox">
+<h3>ul list item is clicked, show the item that was clicked</h3>
+    <ul id="vul">
+        <li>Vanilla</li>
+        <li>List</li>
+    </ul>
+    <p id="vulclick"></p>
+    <ul id="qul">
+        <li>jQuery</li>
+        <li>List</li>
+    </ul>
+    <p id="qulclick"></p>
+
+<h2>Functions and Selectors</h2>
+<h3>Create</h3>
+<h4>Javascript</h4>
+<code>
+    var p = document.createElement("p");<br>
+    p.innerHTML = "This is a new paragraph"<br>
+    body.appendChild(p);
+</code>
+<h4>jQuery</h4>
+<code>
+    var p = $('&lt;p&gt;');<br>
+    p.text("This is a new paragraph")
+    $("body").append(p);
+</code>
+
+<h3>Remove</h3>
+<h4>Javascript</h4>
+<code>
+    document.createElementByID("p").remove();
+</code>
+<h4>jQuery</h4>
+<code>
+    $('p').remove();
+</code>
+
+<h3>Append</h3>
+<h4>Javascript</h4>
+<code>
+    body.append(p);
+</code>
+<h4>jQuery</h4>
+<code>
+    $("body").append(p);
+</code>
+
+<h3>Prepend</h3>
+<h4>Javascript</h4>
+<code>
+    document.getElementById("p").insertBefore("Random Element");
+</code>
+<h4>jQuery</h4>
+<code>
+    $("p").prepend("<b>Prepended text</b>");
+</code>
+
+<h3>Create and add: After</h3>
+<h4>Javascript</h4>
+<code>
+    var p = document.createElement("p");<br>
+    p.innerHTML = "This is a new paragraph"<br>
+    body.append(p);
+</code>
+<h4>jQuery</h4>
+<code>
+    var p = $('&lt;p&gt;');<br>
+    p.text("This is a new paragraph")
+    $("body").append(p);
+</code>
+
+<h3>Create and add: Before</h3>
+<h4>Javascript</h4>
+<code>
+    var p = document.createElement("p");<br>
+    p.innerHTML = "This is a new paragraph"<br>
+    document.getElementById("myDiv").insertBefore(p);
+</code>
+<h4>jQuery</h4>
+<code>
+    var p = $('&lt;p&gt;');<br>
+    p.text("This is a new paragraph")
+    $("body").prepend(p);
+</code>
+
+<h3>Clone</h3>
+<h4>Javascript</h4>
+<code>
+    var clone = document.getElementById("myElement").cloneNode(true);<br>
+    body.append(clone);
+</code>
+<h4>jQuery</h4>
+<code>
+    $("p").clone().appendTo("body");
+</code>
+
+<h3>Add a class</h3>
+<h4>Javascript</h4>
+<code>
+    var element = document.getElementById("myDIV");
+    element.classList.add("mystyle");
+</code>
+<h4>jQuery</h4>
+<code>
+    $("p").addClass("intro");
+</code>
+
+<h3>Remove a class</h3>
+<h4>Javascript</h4>
+<code>
+    var element = document.getElementById("myDIV");
+    element.classList.remove("mystyle");
+</code>
+<h4>jQuery</h4>
+<code>
+    $("p").removeClass("intro");
+</code>
+
+<h3>Toggle a class</h3>
+<h4>Javascript</h4>
+<code>
+    var element = document.getElementById("myDIV");
+    element.classList.toggle("mystyle");
+</code>
+<h4>jQuery</h4>
+<code>
+    $("p").toggleClass("mystyle");
+</code>
+
+<h3>Add a disabled attribute</h3>
+<h4>Javascript</h4>
+<code>
+    document.getElementById("myBtn").disabled = true;
+</code>
+<h4>jQuery</h4>
+<code>
+    $("button").attr("disabled", true);
+</code>
+
+<h3>Remove the disabled attribute</h3>
+<h4>Javascript</h4>
+<code>
+    document.getElementById("myBtn").disabled = false;
+</code>
+<h4>jQuery</h4>
+<code>
+    $("button").attr("disabled", false);
+</code>
+
+<h3>Set a data-src attribute</h3>
+<h4>Javascript</h4>
+<code>
+    document.getElementById("myBtn").disabled = false;
+</code>
+<h4>jQuery</h4>
+<code>
+    $("img").each(function() {
+        $(this).attr("data-src",$(this).attr("src"));
+        $(this).removeAttr("src");
+    });
+</code>
+
+<h3>Remove the data-src attribute</h3>
+<h4>Javascript</h4>
+<code>
+    document.getElementById("myBtn").disabled = false;
+</code>
+<h4>jQuery</h4>
+<code>
+    $("img").each(function() {
+        $(this).attr("data-src",$(this).attr("src"));
+        $(this).removeAttr("src");
+    });
+</code>
+
+<h3>Hide</h3>
+<h4>Javascript</h4>
+<code>
+    document.getElementById("myBtn").display = "none";
+</code>
+<h4>jQuery</h4>
+<code>
+    $("button").click(function(){
+        $("p").hide();
+      });
+</code>
+
+<h3>Show</h3>
+<h4>Javascript</h4>
+<code>
+    document.getElementById("myBtn").display = "block";
+</code>
+<h4>jQuery</h4>
+<code>
+    $("button").click(function(){
+        $("p").show();
+      });
+</code>
+
+<h3>Fade in</h3>
+<h4>Javascript</h4>
+<code>
+    document.getElementById('myBtn').onclick = function () {
+        slideSource.classList.toggle('fade');
+    }
+</code>
+<p>Css classes</p>
+<code>
+    #slideSource {
+        opacity: 1;
+        transition: opacity 1s; 
+      }
+      
+      #slideSource.fade {
+        opacity: 0;
+      }
+</code>
+<h4>jQuery</h4>
+<code>
+    $("button").click(function(){
+        $("#div1").fadeIn();
+        $("#div2").fadeIn("slow");
+        $("#div3").fadeIn(3000);
+    });
+</code>
+
+<h3>Fade out</h3>
+<h4>Javascript</h4>
+<code>
+    document.getElementById('myBtn').onclick = function () {
+        slideSource.classList.toggle('fade');
+    }
+</code>
+<p>Css classes</p>
+<code>
+    #slideSource {
+        opacity: 1;
+        transition: opacity 1s; 
+      }
+      
+      #slideSource.fade {
+        opacity: 0;
+      }
+</code>
+<h4>jQuery</h4>
+<code>
+    $("button").click(function(){
+        $("#div1").fadeOut();
+        $("#div2").fadeOut("slow");
+        $("#div3").fadeOut(3000);
+      });
+</code>
+
+<h3>Iterate a collection of elements</h3>
+<h4>Javascript</h4>
+<code>
+    var list= document.getElementsByClassName("events");
+    for (var i = 0; i &lt; list.length; i++) {
+        list[i].classList.add("className");
+    }
+</code>
+<h4>jQuery</h4>
+<code>
+    $("button").click(function(){
+        $("li").each(function(e){
+            e.addClass("className");
+        });
+    });
+</code>
+
+<h3>Get the parent element</h3>
+<h4>Javascript</h4>
+<code>
+    var x = document.getElementById("myLI").parentElement.nodeName;
+</code>
+<h4>jQuery</h4>
+<code>
+    $(document).ready(function(){
+        $("span").parent().css({"color": "red", "border": "2px solid red"});
+      });
+</code>
+
+<h3>Get the collection of children</h3>
+<h4>Javascript</h4>
+<code>
+    var c = document.body.childNodes;
+</code>
+<h4>jQuery</h4>
+<code>
+    var children= $('body').children();
+</code>
+
+<h3>Get all the elements that have a certain class</h3>
+<h4>Javascript</h4>
+<code>
+    var elements = document.getElementsByClassName("className");
+</code>
+<h4>jQuery</h4>
+<code>
+    var all = $(".className")
+</code>
+
+<h3>Get an item by id</h3>
+<h4>Javascript</h4>
+<code>
+    var element = document.getElementsById("id");
+    element.style.fontWeight = "900";
+</code>
+<h4>jQuery</h4>
+<code>
+    var element = $("#id").css("font-weight", "bold");
+</code>
+
+<h3>Get all the elements that have a certain class and the display property of none
+    and change their font color</h3>
+
+<h3>Get the options of a select element that are selected</h3>
+
+<h3>Change the href attribute</h3>
+<h4>Javascript</h4>
+<code>
+    document.getElementById("#a").setAttribute('href', "http://facebook.com");
+</code>
+<h4>jQuery</h4>
+<code>
+    $("a").attr("href", "https://www.w3schools.com/jquery/");
+</code>
+
+<h3>Show an alert with the value of the first <code>&lt;input&gt;</code> of the page</h3>
+<h4>Javascript</h4>
+<code>
+    document.getElementById("#a").setAttribute('href', "http://facebook.com");
+</code>
+<h4>jQuery</h4>
+<code>
+    $("a").attr("href", "https://www.w3schools.com/jquery/");
+</code>
+
+<h3>Remove all items</h3>
+<h3>Animate an item</h3>
+
+
+<script src="js.js"></script>
+<script src="jQuery.js"></script>
+
+</body>
+</html>
